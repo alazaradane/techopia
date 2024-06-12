@@ -17,6 +17,12 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily:{
+        sans: ["Montserrat", "sans-serif"],
+        open: ["Open Sans", "sans-serif"],
+        poppins:["Poppins","sans-serif"],
+        Rub:["Rubik Glitch Pop", "sans-serif"]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -24,12 +30,12 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#000814",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#dbdbdb",
+          blue: "#1c6ced",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
