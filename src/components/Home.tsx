@@ -1,10 +1,12 @@
-import NavBar from "./NavBar"
+import Hero from "./Hero"
+import Service from "./Service"
 
 
 const Home = () => {
   return (
     <main className=" w-full h-screen bg-primary">
-      <NavBar/>
+      <Hero/>
+      <Service/>
     </main>
   )
 }

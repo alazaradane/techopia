@@ -78,3 +78,58 @@
       @apply bg-background text-foreground;
     }
   }
+
+  @keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(10px, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.floating {
+    position: absolute;
+    animation: float 5s ease-in-out infinite;
+}
+
+.floating:nth-child(1) {
+    top: 10%;
+    left: 20%;
+}
+
+.floating:nth-child(2) {
+    top: 30%;
+    left: 40%;
+}
+
+.floating:nth-child(3) {
+    top: 50%;
+    left: 60%;
+}
+
+.floating:nth-child(4) {
+    top: 70%;
+    left: 80%;
+}
+
+.floating:nth-child(5) {
+    top: 90%;
+    left: 20%;
+}
+
+.circle-container {
+  position: relative;
+  width: 20rem; /* Adjust as needed */
+  height: 20rem; /* Adjust as needed */
+}
+
+.circle-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

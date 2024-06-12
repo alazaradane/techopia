@@ -5,6 +5,9 @@ import Blogs from "./components/Blogs"
 import Projects from "./components/Projects"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
+import  Home  from "./components/Home"
+
+
 
 
 const Layout = ()=>{
@@ -22,17 +25,21 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children:[
       {
-        path:'/event:id',
+        path:'/',
+        element: <Home/>
+      },
+      {
+        path:'/event/:id',
         element: <Events/>,
       },
       {
-        path:'/blog:id',
+        path:'/blog/:id',
         element: <Blogs/>,
       },
       {
-        path: '/projects:id',
+        path: '/projects/:id',
         element: <Projects/>
-      }
+      },
     ]
   },
   {
