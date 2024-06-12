@@ -18,12 +18,11 @@ const NavBar = () => {
 
   return (
     <section className="relative flex items-center mb-5 p-4 lg:p-0">
-      {/* Logo and Menu Button */}
       <div className="flex items-center justify-between w-full lg:w-auto">
         <div className="flex items-center gap-1">
           <img src={logo} alt="logo" className="w-10 h-10 lg:w-40 lg:h-40" />
           <p className="text-xl lg:text-2xl font-bold text-secondary font-Rub pb-1 lg:pb-5">
-            <span className="text-secondary-blue">TECH</span>OPIA
+            <span className=" bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text ">TECH</span>OPIA
           </p>
         </div>
         <div className="lg:hidden bg-primary">
