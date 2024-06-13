@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu"
 import { navItems } from "../data";
-
+import '../index.css'
 
 const NavBar = () => {
   
@@ -46,7 +46,7 @@ const NavBar = () => {
 
       <div className={`hidden lg:flex items-center ml-0 lg:ml-[10rem] mb-4 gap-4 lg:gap-[2rem] font-poppins font-semibold text-md text-secondary`}>
         {navItems.map((item)=>(
-          <Link key={item.name} to={item.link}>{item.name}</Link>
+          <Link key={item.name} to={item.link} className="text-secondary group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r">{item.name}</Link>
         ))}
       </div>
       <div className="hidden lg:flex items-center ml-0 lg:ml-[5rem] mb-4 font-poppins font-semibold text-md bg-white rounded-[2rem] px-5 py-2">

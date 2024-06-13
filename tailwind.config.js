@@ -17,6 +17,7 @@ module.exports = {
       },
     },
     extend: {
+      
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translate(0, 0)' },
