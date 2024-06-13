@@ -1,7 +1,9 @@
 import AboutUs from "./AboutUs"
 import Hero from "./Hero"
 import Mission from "./Mission"
+import RecentWork from "./RecentWork"
 import Service from "./Service"
+import TeamMembers from "./Team"
 
 
 
@@ -12,6 +14,8 @@ const Home = () => {
       <Service/>
       <AboutUs/>
       <Mission/>
+      <TeamMembers/>
+      <RecentWork/>
     </main>
   )
 }

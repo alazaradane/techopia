@@ -1,4 +1,4 @@
-import { code, cursor, mission, money, secure, value, vision } from "../assets/images"
+import { avatar1, avatar2, avatar3, avatar4, code, cursor, learn, mission, money, sbrain, secure, value, vision } from "../assets/images"
 
 export const navItems = [
     {name: 'Home', link:'/'},
@@ -26,3 +26,45 @@ export const idea = [
     {id:2, icon:mission,title:" Mission", desc:"At Techopia, we empower businesses and individuals through innovative digital solutions. Our goal is to deliver exceptional web development, graphic design, and growth strategies that elevate brands."},
     {id:3, icon:value,title:"Values", desc:["Innovation","Empowerment","Excellence"]},
 ]
+
+export const teamMembers = [
+    {
+      name: 'Galtbaaksh Ch.',
+      role: 'CEO',
+      image: avatar1, 
+      highlight: true, 
+      status: 'Hey there!' 
+    },
+    {
+      name: 'Gantulga S.',
+      role: 'Senior Software Engineer',
+      image: avatar2
+    },
+    {
+      name: 'Batjinnyam A.',
+      role: 'Project Manager',
+      image: avatar3
+    },
+    {
+      name: 'Munkh-Erdene T.',
+      role: 'UI/UX Designer',
+      image: avatar4
+    },
+  ];
+
+export const recentWorks = [
+    {
+      title: 'Kintai kanry system',
+      description: 'We offer top-notch performance to our clients by providing systematic and innovative services to cater to their key products & services.',
+      technologies: ['React Native', 'Next.js', 'GraphQL', 'Figma'],
+      image: learn, 
+      icon:secure
+    },
+    {
+      title: 'Oyu tolgoi catalyst fund for development',
+      description: 'We offer top-notch services to our clients by providing systematic and innovative services to cater to their key products & services.',
+      technologies: ['ReactJS', 'GraphQL', 'Figma'],
+      image: sbrain, 
+      icon:cursor
+    },
+  ];

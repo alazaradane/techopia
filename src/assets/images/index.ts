@@ -13,6 +13,8 @@ import avatar5 from './avatar5.png'
 import mission from './mission.png'
 import vision from './vision.png'
 import value from './value.png'
+import learn from './learn.png'
+import sbrain from './sbrain.png'
 
 
 export {
@@ -30,5 +32,7 @@ export {
     avatar5,
     value,
     mission,
-    vision
+    vision,
+    learn,
+    sbrain
 }
