@@ -19,6 +19,15 @@ module.exports = {
     extend: {
       
       keyframes: {
+        meteor: {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: 1 },
+          '70%': { opacity: 1 },
+          '100%': { transform: 'rotate(215deg) translateX(-500px)', opacity: 0 },
+        },
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
         rotateBorder: {
           '0%': { 'background-position': '0% 50%' },
           '100%': { 'background-position': '200% 50%' },
@@ -41,6 +50,8 @@ module.exports = {
         },
       },
       animation: {
+        'meteor-effect': 'meteor 5s linear infinite',
+        rotate: 'rotate 10s linear infinite',
         float: 'float 5s ease-in-out infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

@@ -7,7 +7,7 @@ const Service = () => {
   return (
     <main className=" text-secondary px-10 py-5 h-fit bg-primary max-lg:mt-[15rem]">
       <div>
-        <p className=" text-2xl font-bold px-10">Our <span className=" text-secondary-blue">Service</span></p>
+        <p className=" text-3xl font-bold px-10">Our <span className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">Service</span></p>
           <CardDescription className=" text-md pl-[2.5rem] pt-[1rem]">
             Your Jounrney Begin 
           </CardDescription>

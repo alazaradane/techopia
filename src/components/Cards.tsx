@@ -35,7 +35,7 @@ const  Cards = ({icon,short, name,desc, id}:{icon:any, id:Number, short:string,n
           </form>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Button variant="ghost" className=" hover:border-transparent hover:bg-gradient-to-r hover:text-secondary font-poppins px-[2rem] rounded-sm from-blue-500 to-purple-600 bg-clip-border">Explore</Button>
+          <Button variant="ghost" className=" hover:border-transparent hover:bg-gradient-to-r hover:text-secondary font-poppins px-[2rem] rounded-[2rem] from-blue-500 to-purple-600 bg-clip-border">Explore</Button>
         </CardFooter>
       </Card>
     </div>

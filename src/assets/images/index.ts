@@ -5,6 +5,11 @@ import cursor from './hero3.png'
 import secure from './hero2.png'
 import code from './hero4.png'
 import money from './money.png'
+import avatar1 from './avatar1.png'
+import avatar2 from './avatar2.png'
+import avatar3 from './avatar3.png'
+import avatar4 from './avatar4.png'
+import avatar5 from './avatar5.png'
 
 
 export {
@@ -14,5 +19,10 @@ export {
     cursor,
     secure,
     code,
-    money
+    money,
+    avatar1,
+    avatar2,
+    avatar3,
+    avatar4,
+    avatar5
 }
