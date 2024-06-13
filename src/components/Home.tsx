@@ -4,7 +4,7 @@ import Service from "./Service"
 
 const Home = () => {
   return (
-    <main className=" w-full h-screen bg-primary">
+    <main className=" w-full h-fit bg-primary">
       <Hero/>
       <Service/>
     </main>

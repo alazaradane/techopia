@@ -19,6 +19,14 @@ module.exports = {
     extend: {
       
       keyframes: {
+        rotateBorder: {
+          '0%': { 'background-position': '0% 50%' },
+          '100%': { 'background-position': '200% 50%' },
+        },
+        borderMove: {
+          '0%': { 'background-position': '0% 50%' },
+          '100%': { 'background-position': '100% 50%' },
+        },
         float: {
           '0%, 100%': { transform: 'translate(0, 0)' },
           '50%': { transform: 'translate(10px, -10px)' },
@@ -37,6 +45,8 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      borderMove: 'borderMove 3s linear infinite',
+      rotateBorder: 'rotateBorder 3s linear infinite',
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
         open: ["Open Sans", "sans-serif"],
@@ -51,7 +61,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#000814",
-          foreground: "hsl(var(--primary-foreground))",
+          gradient: "bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text"
         },
         secondary: {
           DEFAULT: "#dbdbdb",
