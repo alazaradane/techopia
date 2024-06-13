@@ -1,7 +1,8 @@
 import AboutUs from "./AboutUs"
 import Hero from "./Hero"
+import Mission from "./Mission"
 import Service from "./Service"
-import Metor from "./ui/Metor"
+
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
       <Hero/>
       <Service/>
       <AboutUs/>
-      <Metor/>
+      <Mission/>
     </main>
   )
 }

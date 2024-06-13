@@ -1,38 +1,35 @@
+import { tick } from "../../assets/icons"
+import { idea } from "../../data"
 
 
-const Metor = ()=> {
+const Metor = ({id,icon, title, desc}:{ id:any,icon:any, title:string, desc:any})=> {
   return (
-    <section className="antialiased h-screen w-full flex items-center justify-center bg-slate-900">
-      <div className="h-1/2 w-3/4  relative max-w-sm">
-        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
+    
+      <div className="h-1/2 w-3/4  relative max-w-sm cursor-pointer hover:scale-105">
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
         <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
-          <div className="h-5 w-5 rounded-full border flex items-center justify-center mb-4 border-gray-500">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="h-2 w-2 text-gray-300"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25" />
-            </svg>
+          <div className="rounded-full  flex items-center justify-center mb-4">
+            <img src={icon} alt={icon} className={`w-[6rem] h-[6rem]`} />
           </div>
 
-          <h1 className="font-bold text-xl text-white mb-4">Meteors because they're cool</h1>
+          <h1 className="font-bold text-2xl  text-white mb-4">{title}</h1>
 
           <p className="font-normal text-base text-gray-300 mb-4">
-            I don't know what to write so I'll just paste something cool here. One more sentence because lorem ipsum is
-            just unacceptable. Won't ChatGPT the shit out of this.
+            {id===1 && desc}
+            {id===2 && desc}
+            
+            {id===3 && idea[2].desc.map((item:any)=>(
+              <div className=" flex items-center gap-1">
+                <img src={tick} alt="" className=" w-[2rem] h-[2rem]" />
+                <p key={item}>{item}</p>
+              </div>
+            ))}
           </p>
 
-          <button className=" px-4 py-1 rounded-lg border border-gray-500 text-gray-300">Explore</button>
-
-          {/* Meaty part - Meteor effect */}
           <Meteors number={10} />
         </div>
       </div>
-    </section>
+    
   )
 }
 

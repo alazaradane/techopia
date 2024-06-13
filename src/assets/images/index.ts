@@ -10,6 +10,9 @@ import avatar2 from './avatar2.png'
 import avatar3 from './avatar3.png'
 import avatar4 from './avatar4.png'
 import avatar5 from './avatar5.png'
+import mission from './mission.png'
+import vision from './vision.png'
+import value from './value.png'
 
 
 export {
@@ -24,5 +27,8 @@ export {
     avatar2,
     avatar3,
     avatar4,
-    avatar5
+    avatar5,
+    value,
+    mission,
+    vision
 }

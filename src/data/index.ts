@@ -1,4 +1,4 @@
-import { code, cursor, money, secure } from "../assets/images"
+import { code, cursor, mission, money, secure, value, vision } from "../assets/images"
 
 export const navItems = [
     {name: 'Home', link:'/'},
@@ -19,4 +19,10 @@ export const service = [
     {id:3,icon:money, name: 'Businees Growth Solutions', short:"Empower your business",desc:"Enhance wewewewwwww your online visibility and attract more customers with our strategic planning, digital marketing, and SEO services", },
     {id:4,icon:code, name: 'Internship Programs',short:"Boost your skills", desc:"Gain hands-on experience and mentorship in web development and graphic design through our dynamic internship programs.", },
     {id:5,icon:code, name: 'Internship Programs',short:"Boost your skills", desc:"Gain hands-on experience and mentorship in web development and graphic design through our dynamic internship programs.", },
+]
+
+export const idea = [
+    {id:1, icon:vision,title:" Vision", desc:"We aim to be the leading partner in digital innovation, known for our excellence and transformative impact. We envision a community of empowered developers and dynamic businesses thriving together."},
+    {id:2, icon:mission,title:" Mission", desc:"At Techopia, we empower businesses and individuals through innovative digital solutions. Our goal is to deliver exceptional web development, graphic design, and growth strategies that elevate brands."},
+    {id:3, icon:value,title:"Values", desc:["Innovation","Empowerment","Excellence"]},
 ]
