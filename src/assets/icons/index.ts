@@ -1,7 +1,11 @@
 import logo from '../icons/logo.svg'
 import tick from '../icons/tick.png'
+import phone from '../icons/phone.png'
+import mail from '../icons/mail.png'
 
 export {
     logo,
-    tick
+    tick,
+    phone,
+    mail
 }

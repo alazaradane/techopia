@@ -1,5 +1,6 @@
 import AboutUs from "./AboutUs"
 import Banner from "./Banner"
+import ContactUs from "./ContactUs"
 import Hero from "./Hero"
 import Mission from "./Mission"
 import RecentWork from "./RecentWork"
@@ -18,6 +19,7 @@ const Home = () => {
       <TeamMembers/>
       <RecentWork/>
       <Banner/>
+      <ContactUs/>
     </main>
   )
 }

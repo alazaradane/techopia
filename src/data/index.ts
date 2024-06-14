@@ -68,3 +68,11 @@ export const recentWorks = [
       icon:cursor
     },
   ];
+
+
+  export const contactUs = [
+    {label:"Full Name", placeholder:'Enter your name'},
+    {label:"Email Address", placeholder:'Enter your email address'},
+    {label:"Phone", placeholder:'Enter your phone number'},
+    {label:"Message", placeholder:'Enter your message'},
+  ]

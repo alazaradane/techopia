@@ -26,7 +26,7 @@ const Metor = ({id,icon, title, desc}:{ id:any,icon:any, title:string, desc:any}
             ))}
           </p>
 
-          <Meteors number={10} />
+          <Meteors number={15} />
         </div>
       </div>
     
