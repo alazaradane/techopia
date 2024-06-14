@@ -15,7 +15,7 @@ import vision from './vision.png'
 import value from './value.png'
 import learn from './learn.png'
 import sbrain from './sbrain.png'
-
+import banner from './bannert.png'
 
 export {
     menu,
@@ -34,5 +34,6 @@ export {
     mission,
     vision,
     learn,
-    sbrain
+    sbrain,
+    banner
 }

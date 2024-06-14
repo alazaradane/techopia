@@ -1,4 +1,4 @@
-import { tick } from "../../assets/icons"
+import { TiTick } from "react-icons/ti"
 import { idea } from "../../data"
 
 
@@ -20,8 +20,8 @@ const Metor = ({id,icon, title, desc}:{ id:any,icon:any, title:string, desc:any}
             
             {id===3 && idea[2].desc.map((item:any)=>(
               <div className=" flex items-center gap-1">
-                <img src={tick} alt="" className=" w-[2rem] h-[2rem]" />
-                <p key={item}>{item}</p>
+               <TiTick className="bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500 w-[3rem] h-[3rem]" />
+                <p key={item} className=" text-md font-semibold">{item}</p>
               </div>
             ))}
           </p>
