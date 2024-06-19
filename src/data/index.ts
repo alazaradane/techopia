@@ -1,12 +1,12 @@
 import { avatar1, avatar2, avatar3, avatar4, code, cursor, learn, mission, money, sbrain, secure, value, vision } from "../assets/images"
 
 export const navItems = [
-    {name: 'Home', link:'/'},
-    {name: 'Projects', link:'/projects/:id'},
-    {name: 'Blogs', link:'/blogs/:id'},
-    {name: 'Events', link:'/events/:id'},
-    {name:"Services", link:'#service'},
-    {name:"About Us", link:'#about_us'}
+    { id:1, name: 'Home', link:'/'},
+    {id:2,name: 'Projects', link:'/projects/:id'},
+    {id:3,name: 'Blogs', link:'/blogs/:id'},
+    {id:4,name: 'Events', link:'/events/:id'},
+    {id:5,name:"Services", link:'service'},
+    {id:6,name:"About Us", link:'#about_us'}
 ]
 
 export const hero_text = [

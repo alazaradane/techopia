@@ -68,7 +68,7 @@ const ContactUs = () => {
   }
 
   return (
-    <section className="flex items-start mx-[6rem] mb-[6rem] mt-[5rem]">
+    <section id="contact_us" className="flex items-start mx-[6rem] mb-[6rem] mt-[5rem]">
       <div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">

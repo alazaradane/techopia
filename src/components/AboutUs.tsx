@@ -6,11 +6,11 @@ import { avatar1, avatar2, avatar3, avatar4 } from "../assets/images";
 
 const AboutUs = () => {
   return (
-    <div className="flex h-fit flex-col md:flex-row items-center justify-center min-h-screen bg-primary text-secondary p-8">
+    <div id="about_us" className="flex h-fit flex-col md:flex-row items-center justify-center min-h-screen bg-primary text-secondary p-8">
       <div className="md:w-1/2 mb-8 md:mb-0">
         <h2 className="text-3xl font-bold mb-4"><span className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">About</span> Us</h2>
         <p className="text-lg">
-          Our company, QWERTYTUTORIAL, is at the forefront of technological innovation, dedicated to shaping the future with cutting-edge solutions. Our commitment to excellence and relentless pursuit of improvement drives us to constantly push the boundaries of what's possible, ensuring we stay ahead in a rapidly evolving digital landscape.
+          Our company, Techopia is at the forefront of technological innovation, dedicated to shaping the future with cutting-edge solutions. Our commitment to excellence and relentless pursuit of improvement drives us to constantly push the boundaries of what's possible, ensuring we stay ahead in a rapidly evolving digital landscape.
         </p>
       </div>
       <div className="md:w-1/2 flex justify-center relative">

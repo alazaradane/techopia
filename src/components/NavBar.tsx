@@ -15,7 +15,8 @@ import '../index.css'
 
 const NavBar = () => {
   
-
+  const idsToCheck = [5,6];
+  const idLink = [1,2,3,4]
   return (
     <section className="relative flex items-center mb-5 p-4 lg:p-0">
       <div className="flex items-center justify-between w-full lg:w-auto">
@@ -33,9 +34,13 @@ const NavBar = () => {
             <DropdownMenuContent>
               <DropdownMenuLabel>Explore</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              {navItems.map((item)=>(
-                <DropdownMenuItem key={item.name}>
-                  <Link to={item.link}>{item.name}</Link>
+              {navItems.map(({id, name,link})=>(
+                <DropdownMenuItem key={name}>
+                  <Link to={link}>
+                    {idLink.includes(id) && name}
+                    {idsToCheck.includes(id) && <a href="service">{name}</a>}
+                    {idsToCheck.includes(id) && <a href="about_us">{name}</a>}
+                  </Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -50,7 +55,7 @@ const NavBar = () => {
         ))}
       </div>
       <div className="hidden lg:flex items-center ml-0 lg:ml-[5rem] mb-4 font-poppins font-semibold text-md bg-white rounded-[2rem] px-5 py-2">
-        <Link to="/contact_us">Contact Us</Link>
+        <a href="#contact_us">Contact Us</a>
       </div>
 
     </section>
