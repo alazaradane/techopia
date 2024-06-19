@@ -2,9 +2,9 @@ import { avatar1, avatar2, avatar3, avatar4, code, cursor, learn, mission, money
 
 export const navItems = [
     { id:1, name: 'Home', link:'/'},
-    {id:2,name: 'Projects', link:'/projects/:id'},
-    {id:3,name: 'Blogs', link:'/blogs/:id'},
-    {id:4,name: 'Events', link:'/events/:id'},
+    {id:2,name: 'Projects', link:'/projects'},
+    {id:3,name: 'Blogs', link:'/blogs'},
+    {id:4,name: 'Events', link:'/events'},
     {id:5,name:"Services", link:'service'},
     {id:6,name:"About Us", link:'#about_us'}
 ]

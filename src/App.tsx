@@ -1,8 +1,8 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom"
 import NavBar from "./components/NavBar"
-import Events from "./components/Events"
-import Blogs from "./components/Blogs"
-import Projects from "./components/Projects"
+import Events from "./pages/Events"
+import Blogs from "./pages/Blogs"
+import Projects from "./pages/Projects"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
 import  Home  from "./components/Home"
@@ -29,15 +29,15 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path:'/event/:id',
+        path:'/events',
         element: <Events/>,
       },
       {
-        path:'/blog/:id',
+        path:'/blogs',
         element: <Blogs/>,
       },
       {
-        path: '/projects/:id',
+        path: '/projects',
         element: <Projects/>
       },
     ]
