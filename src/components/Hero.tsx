@@ -2,17 +2,48 @@ import {  main } from "../assets/images"
 import { Button } from "./ui/button"
 import '../index.css'
 import { hero_text } from "../data"
+import { useEffect, useState } from "react"
+import Typewriter from "typewriter-effect";
 
 const Hero = () => {
 
-    
+  const [dynamicPartIndex, setDynamicPartIndex] = useState(0);
+  const [dynamicParts] = useState([
+    "become Researchers",
+    "design captivating graphics",
+    "join our empowering internship programs",
+    // Add more dynamic parts as needed
+  ]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDynamicPartIndex((prevIndex) => (prevIndex + 1) % dynamicParts.length);
+    }, 7000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [dynamicParts.length]);
 
 
   return (
     <main id="#hero" className=" relative flex  p-3 max-sm:flex-col max-lg:flex-col max-lg:h-screen ">
         <div className=" px-7 mt-[4rem] w-1/2 max-sm:w-full max-lg:w-full max-lg:mb-[4rem]">
-            <p className=" font-poppins text-secondary text-5xl font-bold my-3 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text ">Welcome to <span className=" text-secondary-blue">Tech</span>opia</p>
-            <p className=" text-secondary font-poppins text-lg  ">
+            <p className=" py-[1rem] font-poppins text-secondary text-5xl font-bold my-3 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text ">  
+            Welcome to Techopia, <Typewriter
+            options={{
+              strings: [
+                `${dynamicParts[dynamicPartIndex]}`,
+                `${dynamicParts[dynamicPartIndex]}`,
+              ],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 10,
+            }}
+          />
+            </p>
+    
+          
+            <p className=" mt-[0.5rem] text-secondary font-poppins text-lg  ">
                 {hero_text}
             </p>
             <div className=" flex items-center gap-5 mt-5">
@@ -29,3 +60,5 @@ const Hero = () => {
 }
 
 export default Hero
+
+

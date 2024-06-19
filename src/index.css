@@ -95,3 +95,7 @@
     background: linear-gradient(90deg, #64748b, transparent);
   }
   
+canvas {
+  height: 100vh !important;
+}
+

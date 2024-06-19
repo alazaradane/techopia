@@ -7,7 +7,7 @@ import Mission from "./Mission"
 import RecentWork from "./RecentWork"
 import Service from "./Service"
 import TeamMembers from "./Team"
-
+import Globe from "./Globe"
 
 
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
       <Mission/>
       <TeamMembers/>
       <RecentWork/>
+      <Globe/>
       <Banner/>
       <ContactUs/>
       <Footer/>
