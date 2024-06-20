@@ -69,6 +69,22 @@ export const recentWorks = [
     },
   ];
 
+export const projects = [
+  {
+    title: 'Kintai kanry system',
+    description: 'We offer top-notch performance to our clients by providing systematic and innovative services to cater to their key products & services.',
+    technologies: ['React Native', 'Next.js', 'GraphQL', 'Figma'],
+    image: learn, 
+    icon:secure
+  },
+  {
+    title: 'Oyu tolgoi catalyst fund for development',
+    description: 'We offer top-notch services to our clients by providing systematic and innovative services to cater to their key products & services.',
+    technologies: ['ReactJS', 'GraphQL', 'Figma'],
+    image: sbrain, 
+    icon:cursor
+  },
+]
 
   export const contactUs = [
     {label:"Full Name", placeholder:'Enter your name'},

@@ -99,3 +99,19 @@ canvas {
   height: 100vh !important;
 }
 
+/* Add this CSS to your global stylesheet or within a styled component */
+.morph-background {
+  animation: morphing 10s infinite alternate;
+}
+
+@keyframes morphing {
+  0% {
+    border-radius: 25% 50% 75% 50% / 50% 75% 50% 25%;
+  }
+  50% {
+    border-radius: 75% 50% 25% 50% / 50% 25% 50% 75%;
+  }
+  100% {
+    border-radius: 25% 75% 50% 25% / 75% 50% 25% 50%;
+  }
+}

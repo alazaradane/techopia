@@ -16,6 +16,9 @@ import value from './value.png'
 import learn from './learn.png'
 import sbrain from './sbrain.png'
 import banner from './bannert.png'
+import search from './search.png'
+import bgBlog from './bgBlog.jpg'
+import notFound  from './notfound.png'
 
 export {
     menu,
@@ -35,5 +38,8 @@ export {
     vision,
     learn,
     sbrain,
-    banner
+    banner,
+    search,
+    bgBlog,
+    notFound
 }

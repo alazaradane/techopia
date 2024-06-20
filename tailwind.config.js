@@ -17,8 +17,15 @@ module.exports = {
       },
     },
     extend: {
-      
+      backgroundImage:{
+        'blog-bg':`url('./src/assets/images/bgBlog.jpg')`
+      },
       keyframes: {
+        morphing: {
+          '0%': { borderRadius: '25% 50% 75% 50% / 50% 75% 50% 25%' },
+          '50%': { borderRadius: '75% 50% 25% 50% / 50% 25% 50% 75%' },
+          '100%': { borderRadius: '25% 75% 50% 25% / 75% 50% 25% 50%' },
+        },
         meteor: {
           '0%': { transform: 'rotate(215deg) translateX(0)', opacity: 1 },
           '70%': { opacity: 1 },
@@ -50,6 +57,7 @@ module.exports = {
         },
       },
       animation: {
+        morphing: 'morphing 10s infinite alternate',
         'meteor-effect': 'meteor 5s linear infinite',
         rotate: 'rotate 10s linear infinite',
         float: 'float 5s ease-in-out infinite',
@@ -64,7 +72,17 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         Rub: ["Rubik Glitch Pop", "sans-serif"]
       },
+      backdropBlur: {
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+      },
+      borderRadius: {
+        'xl': '1rem',
+      },
       colors: {
+        glass: 'rgba(255, 255, 255, 0.2)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
