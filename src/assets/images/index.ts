@@ -26,10 +26,12 @@ import cloud from './cloud.jpeg'
 import cyber from './cyber.jpeg'
 import quanta from './quantum.jpeg'
 import ai from './aiml.jpeg'
+import blogMan from './blog-man.png'
 
 
 
 export {
+    blogMan,
     block,
     cloud,
     cyber,

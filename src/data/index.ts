@@ -1,4 +1,4 @@
-import { avatar1, avatar2, avatar3, avatar4, code, cursor, learn, mission, money, sbrain, secure, value, vision } from "../assets/images"
+import { ai, avatar1, avatar2, avatar3, avatar4, block, cloud, code, cursor, cyber, learn, mission, money, quanta, sbrain, secure, value, vision } from "../assets/images"
 
 export const navItems = [
     { id:1, name: 'Home', link:'/'},
@@ -93,10 +93,18 @@ export const contactUs = [
   {label:"Message", placeholder:'Enter your message'},
 ]
 
-export const blogs = [
-  {title: "The Future of Quantum Computing", category:"Technology", date:"June 20, 2024"  },
-  {title: "Understanding Artificial Intelligence and Machine Learning", category:"AI & ML", date:"June 18, 2024"  },
-  {title: "Cybersecurity in 2024: What You Need to Know", category:"Cybersecurity", date:"June 15, 2024"  },
-  {title: "The Rise of 5G Networks: Benefits and Challenges", category:"Networking", date:"June 10, 2024"  },
-  {title: "Blockchain Beyond Bitcoin: Exploring Real-World Applications", category:"blockchain", date:"June 5, 2024"  },
+
+export interface Blog {
+  title: string;
+  category: string;
+  date: string;
+  img: string;
+}
+
+export const blogs:Blog[] = [
+  {title: "The Future of Quantum Computing", category:"Technology", date:"June 20, 2024", img:quanta },
+  {title: "Understanding Artificial Intelligence and Machine Learning", category:"AI & ML", date:"June 18, 2024" , img:ai },
+  {title: "Cybersecurity in 2024: What You Need to Know", category:"Cybersecurity", date:"June 15, 2024", img:cyber  },
+  {title: "The Rise of 5G Networks: Benefits and Challenges", category:"Networking", date:"June 10, 2024" , img:cloud},
+  {title: "Blockchain Beyond Bitcoin: Exploring Real-World Applications", category:"blockchain", date:"June 5, 2024", img:block },
 ]
