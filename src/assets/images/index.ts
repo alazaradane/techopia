@@ -19,8 +19,24 @@ import banner from './bannert.png'
 import search from './search.png'
 import bgBlog from './bgBlog.jpg'
 import notFound  from './notfound.png'
+import meet from './meeting.jpg'
+import devsetup from './devsetup.jpeg'
+import block from './block.jpeg'
+import cloud from './cloud.jpeg'
+import cyber from './cyber.jpeg'
+import quanta from './quantum.jpeg'
+import ai from './aiml.jpeg'
+
+
 
 export {
+    block,
+    cloud,
+    cyber,
+    quanta,
+    ai,
+    meet,
+    devsetup,
     menu,
     hero,
     main,
@@ -41,5 +57,5 @@ export {
     banner,
     search,
     bgBlog,
-    notFound
+    notFound,
 }

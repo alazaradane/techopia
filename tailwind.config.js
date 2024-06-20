@@ -18,7 +18,9 @@ module.exports = {
     },
     extend: {
       backgroundImage:{
-        'blog-bg':`url('./src/assets/images/bgBlog.jpg')`
+        'blog-bg':`url('./src/assets/images/bgBlog.jpg')`,
+        'blog-1':`url('./src/assets/images/meeting.jpg')`,
+        'blog-2':`url('./src/assets/images/devsetup.png')`,
       },
       keyframes: {
         morphing: {

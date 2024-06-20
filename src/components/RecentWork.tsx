@@ -10,8 +10,15 @@ const RecentWork = () => {
         {recentWorks.map((work, index) => (
           <div
             key={index}
-            className="bg-gray-900 text-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row"
+            className="bg-gray-900 text-white p-6 rounded-lg gap-3 shadow-lg flex flex-col md:flex-row"
           >
+             <div className="md:w-1/2 flex items-center justify-center">
+              <img
+                src={work.image}
+                alt={work.title}
+                className="rounded-lg"
+              />
+            </div>
             <div className="md:w-1/2 mb-4 md:mb-0 mt-[2rem]">
             <img src={work.icon} alt={work.title} className=" mb-2 w-[5rem] h-[5rem]"/>
               <h3 className="text-2xl font-semibold">{work.title}</h3>
@@ -27,13 +34,7 @@ const RecentWork = () => {
                 ))}
               </div>
             </div>
-            <div className="md:w-1/2 flex items-center justify-center">
-              <img
-                src={work.image}
-                alt={work.title}
-                className="rounded-lg"
-              />
-            </div>
+           
           </div>
         ))}
       </div>

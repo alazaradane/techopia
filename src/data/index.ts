@@ -86,9 +86,17 @@ export const projects = [
   },
 ]
 
-  export const contactUs = [
-    {label:"Full Name", placeholder:'Enter your name'},
-    {label:"Email Address", placeholder:'Enter your email address'},
-    {label:"Phone", placeholder:'Enter your phone number'},
-    {label:"Message", placeholder:'Enter your message'},
-  ]
+export const contactUs = [
+  {label:"Full Name", placeholder:'Enter your name'},
+  {label:"Email Address", placeholder:'Enter your email address'},
+  {label:"Phone", placeholder:'Enter your phone number'},
+  {label:"Message", placeholder:'Enter your message'},
+]
+
+export const blogs = [
+  {title: "The Future of Quantum Computing", category:"Technology", date:"June 20, 2024"  },
+  {title: "Understanding Artificial Intelligence and Machine Learning", category:"AI & ML", date:"June 18, 2024"  },
+  {title: "Cybersecurity in 2024: What You Need to Know", category:"Cybersecurity", date:"June 15, 2024"  },
+  {title: "The Rise of 5G Networks: Benefits and Challenges", category:"Networking", date:"June 10, 2024"  },
+  {title: "Blockchain Beyond Bitcoin: Exploring Real-World Applications", category:"blockchain", date:"June 5, 2024"  },
+]

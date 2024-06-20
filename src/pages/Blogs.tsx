@@ -1,9 +1,13 @@
+import BlogHead from "../components/BlogHead";
+
 
 
 const Blogs = () => {
   return (
-    <div>Blogs</div>
-  )
+    <main className="text-secondary w-full">
+      <BlogHead/>
+    </main>
+  );
 }
 
-export default Blogs
+export default Blogs;
