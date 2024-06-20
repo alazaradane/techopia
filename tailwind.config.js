@@ -21,6 +21,7 @@ module.exports = {
         'blog-bg':`url('./src/assets/images/bgBlog.jpg')`,
         'blog-1':`url('./src/assets/images/meeting.jpg')`,
         'blog-2':`url('./src/assets/images/devsetup.png')`,
+        'text-gradient': 'linear-gradient(90deg, rgba(8,0,36,1) 0%, rgba(33,95,208,1) 0%, rgba(59,101,179,1) 59%, rgba(53,45,158,1) 100%, rgba(101,80,182,1) 100%, rgba(67,9,121,1) 100%, rgba(0,212,255,1) 100%);',
       },
       keyframes: {
         morphing: {
