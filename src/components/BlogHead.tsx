@@ -1,5 +1,5 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-import {  blog3, blogMan, devsetup } from "../assets/images";
+import {  blog3, blogMan, devsetup, sbrain } from "../assets/images";
 import { add, star } from "../assets/icons";
 
  
@@ -8,9 +8,9 @@ import { add, star } from "../assets/icons";
 const BlogHead = () => {
 
   return (
-    <main className="flex bg-primary px-[2rem]">
-      <div className="flex flex-col items-center">
-        <div className="flex items-end gap-1 w-full">
+    <main className="flex bg-primary px-[2rem] h-fit">
+      <div className="flex flex-col">
+        <div className="flex  gap-1 w-full mt-[4rem]">
           <p className="mt-[0.4rem] mb-[1rem] ml-[2rem] italic text-6xl font-bold">
             Best of the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">Week</span>
           </p>
@@ -34,6 +34,20 @@ const BlogHead = () => {
                     <div className=" px-[1.5rem] py-[0.5rem] flex flex-col items-center justify-center bg-gradient-to-r  from-purple-500 to-indigo-500 ">
                         <p className="text-2xl font-bold text-white">New Tech Stack Coming Soon</p>
                     </div>
+                </div>
+              </div>
+              <div className=" relative right-[2.5rem]  w-[55rem] h-[15rem] mt-[1rem]">
+                <img src={sbrain} alt="meeting" className="relative rounded-[4rem] inset-0 w-[55rem] h-[15rem] object-cover z-0" />
+                <div className="absolute inset-0 flex items-start justify-center z-10">
+                  <div className=" flex mt-[5rem] gap-[5rem] ">
+                      <div className=" flex flex-col">
+                          <p className=" px-[1rem] py-[0.25rem] rounded-[3rem] bg-gradient-to-r from-purple-500 to-indigo-500">Jun 20 2024</p>
+                          <p className="relative top-3 border-[1px] w-fit px-[1rem] pb-[0.25rem] rounded-[2rem]"><span className=" font-bold text-2xl relative bottom-0.5">.</span> website</p>
+                      </div>
+                      <div className=" px-[1.5rem] py-[0.5rem] flex flex-col items-center justify-center bg-gradient-to-r  from-purple-500 to-indigo-500 ">
+                          <p className="text-2xl font-bold text-white">New Tech Stack Coming Soon</p>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
