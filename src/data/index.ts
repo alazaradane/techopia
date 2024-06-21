@@ -108,3 +108,12 @@ export const blogs:Blog[] = [
   {title: "The Rise of 5G Networks: Benefits and Challenges", category:"Networking", date:"June 10, 2024" , img:cloud},
   {title: "Blockchain Beyond Bitcoin: Exploring Real-World Applications", category:"blockchain", date:"June 5, 2024", img:block },
 ]
+
+export const category = [
+  {id:1, label:"All", value:""},
+  {id:2, label: "Science", value:"?cat=science"},
+  {id:3, label:"Technology", value: "?cat=tech"},
+  {id:4, label: "Learning", value:"?cat=learn"},
+  {id:5, label:"LifeStyle", value:"?cat=life"},
+  {id:6, label:"Industry", value:"?cat=trend"}
+]
