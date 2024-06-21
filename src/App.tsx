@@ -6,6 +6,7 @@ import Projects from "./pages/Projects"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
 import  Home  from "./components/Home"
+import BlogDetail from "./components/BlogDetail"
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element:<Login/>
+  },
+  {
+    path:"/blogs/:id",
+    element:<BlogDetail/>
   }
 ])
 

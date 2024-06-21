@@ -71,7 +71,7 @@ const Blogs = () => {
         {filteredBlogs.length===0 ? (
           <ProjectNotFound text={`Opps... 😔 Blog not found, but let collaborate and post new blogs  👍`}/>
         ):filteredBlogs.map((blog) => (
-          <Card key={blog.id} img={blog.img} title={blog.title} text={blog.text} cat={blog.category} date={blog.date} />
+          <Card id={blog.id} key={blog.id} img={blog.img} title={blog.title} text={blog.text} cat={blog.category} date={blog.date} />
         ))}
       </div>
     </main>
