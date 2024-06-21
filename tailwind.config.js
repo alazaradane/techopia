@@ -85,7 +85,7 @@ module.exports = {
         'xl': '1rem',
       },
       colors: {
-        purple:"#6f79fc",
+        read:"#6f79fc",
         glass: 'rgba(255, 255, 255, 0.2)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
