@@ -5,6 +5,7 @@ import { Badge } from "../components/ui/badge";
 import { Input } from "../components/ui/input";
 import { useState } from "react";
 import { category } from "../data";
+import Card from "../components/Card";
 
 
 
@@ -40,7 +41,9 @@ const Blogs = () => {
           </Badge>
         </Link>
       ))}
-        
+      </div>
+      <div className=" flex mt-[2rem] pb-[4rem] items-center justify-center flex-wrap ">
+        <Card/>
       </div>
     </main>
   );
