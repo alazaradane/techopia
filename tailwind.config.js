@@ -40,6 +40,9 @@ module.exports = {
           DEFAULT: "#dbdbdb",
           blue: "#1c6ced",
         },
+        darkblue:{
+          DEFAULT:"#1a2f5c"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -95,5 +98,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('tailwind-scrollbar-hide')
+  ],
 }

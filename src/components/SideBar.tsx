@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const SideBar = () => {
   return (
-    <main className=' ml-[2rem] px-[1rem] h-full border-[1px] relative left-0'>
+    <main className=' ml-[2rem] px-[1rem] h-full border-r-[1px] relative left-0'>
         <div className=' flex items-center w-full gap-[0.25rem]'>
             <img src={Logo} alt="logo" className=' w-[6rem] h-[6rem]' />
             <p className=' text-3xl font-bold mb-4'>Techopia</p>
@@ -17,9 +17,9 @@ const SideBar = () => {
                 <div>Loading</div>
             ):(
                 sidebar.map((item)=>(
-                    <Accordion type="single" collapsible key={item.id}>
+                    <Accordion type="single" collapsible key={item.id} className='-mb-2 relative -left-4'>
                         <AccordionItem value="item-1">
-                            <AccordionTrigger className=' flex gap-2 items-center'>
+                            <AccordionTrigger className=' border-b-[1px] border-slate-600 w-[18rem] px-2 py-1 flex gap-2 items-center'>
                                 <img src={item.icon} alt="icon" className=' w-[2rem] h-[2rem]  p-1' />
                                 <p className=' text-xl text-secondary font-semibold'>
                                 {item.id === 1 ? (
