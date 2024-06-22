@@ -18,6 +18,14 @@ module.exports = {
     },
     extend: {
       colors: {
+        primary: {
+          DEFAULT: "#000814",
+          gradient: "bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text"
+        },
+        secondary: {
+          DEFAULT: "#dbdbdb",
+          blue: "#1c6ced",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
