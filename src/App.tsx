@@ -10,11 +10,15 @@ import Profile from './components/Profile';
 import ProjectForm from './components/ProjectForm';
 import BlogForm from './components/BlogForm';
 import Login from './components/Login';
+import path from 'path';
+import EditProfile from './components/EditProfile';
 
 const Layout = () => {
   return (
-    <div className='flex w-full h-full'>
-      <SideBar />
+    <div className='flex w-full h-full gap-[4rem]'>
+      <div className='w-1/3 h-screen relative -left-8 overflow-hidden'>
+        <SideBar />
+      </div>
       <div className='flex flex-col w-full'>
         <NavBar />
         <div className='flex-grow'>
@@ -35,38 +39,44 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: 'projects',
+        path: '/projects',
         element: <Project />,
         children: [
           {
-            path: 'create', // Correct relative path for nested route
+            path: 'create',
             element: <ProjectForm />,
           },
         ],
       },
       {
-        path: 'blogs',
+        path: '/blogs',
         element: <Blog />,
         children: [
           {
-            path: 'create', // Correct relative path for nested route
+            path: 'create', 
             element: <BlogForm />,
           },
         ],
       },
       {
-        path: 'events',
+        path: '/events',
         element: <Events />,
         children: [
           {
-            path: 'create', // Correct relative path for nested route
+            path: 'create', 
             element: <ProjectForm />,
           },
         ],
       },
       {
-        path: 'profile',
+        path: '/profile',
         element: <Profile />,
+        children:[
+          {
+            path:'edit',
+            element: <EditProfile />,
+          }
+        ]
       },
       {
         path: 'login',
