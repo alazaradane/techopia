@@ -28,9 +28,11 @@ import quanta from './quantum.jpeg'
 import ai from './aiml.jpeg'
 import blogMan from './blog-man.png'
 import blog3 from './blog3.jpeg'
+import load from './load.png'
 
 
 export {
+    load,
     blog3,
     blogMan,
     block,
