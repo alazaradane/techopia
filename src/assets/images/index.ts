@@ -8,8 +8,10 @@ import view from './view.png'
 import plus from './plus.png'
 import pen from './pen.png'
 import search from './search.png'
+import load from './load.png'
 
 export {
+    load,
     dashboard,
     event,
     profile,

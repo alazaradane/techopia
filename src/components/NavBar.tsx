@@ -25,10 +25,10 @@ const NavBar = () => {
   const [position, setPosition] = React.useState("bottom") 
   return (
     <main className=' p-2 flex items-center justify-between  w-full relative -left-[2rem]'>
-      <div className=' text-secondary text-md pl-1 mt-[1rem]'>
+      <div className='text-slate-300 text-lg pl-1'>
         <Breadcrumb>
           <BreadcrumbList>
-            <BreadcrumbItem className=' text-secondary text-lg'>
+            <BreadcrumbItem className=' text-slate-300 text-lg'>
               <RouterBreadcrumbLink to="/">Home</RouterBreadcrumbLink>
             </BreadcrumbItem>
             {pathnames.map((value, index) => {
@@ -37,9 +37,9 @@ const NavBar = () => {
               return (
                 <React.Fragment key={to}>
                   <BreadcrumbSeparator />
-                  <BreadcrumbItem className=' text-secondary text-lg'>
+                  <BreadcrumbItem className='text-slate-300 text-lg'>
                     {isLast ? (
-                      <BreadcrumbPage className='text-secondary text-lg'>{capitalizeFirstLetter(value)}</BreadcrumbPage>
+                      <BreadcrumbPage className='text-slate-300 text-lg'>{capitalizeFirstLetter(value)}</BreadcrumbPage>
                     ) : (
                       <RouterBreadcrumbLink to={to}>{capitalizeFirstLetter(value)}</RouterBreadcrumbLink>
                     )}
@@ -50,8 +50,8 @@ const NavBar = () => {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className=' flex gap-2 relative left-[5rem]'>
-      <div className=" bg-primary flex items-center border-[1px] mx-[2rem] px-[1rem] py-[0.25rem] rounded-2xl">
+      <div className='mt-[0.5rem] flex gap-2 relative left-[5rem]'>
+      <div className=" bg-primary flex items-center border-[1px] mx-[2rem] px-[1rem] py-[0.25rem] rounded-lg">
           <img src={search} alt="search icon" className="w-[1.5rem] h-[1.5rem]" />
           <Input
             placeholder="Search..."

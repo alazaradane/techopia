@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import SideBar from './components/SideBar';
 import NavBar from './components/NavBar';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -13,6 +13,10 @@ import Login from './components/Login';
 import path from 'path';
 import EditProfile from './components/EditProfile';
 import EventForm from './components/EventForm';
+import '@mantine/core/styles.css';
+import { MantineProvider } from '@mantine/core'
+import { load } from './assets/images';
+
 
 const Layout = () => {
   return (
@@ -24,7 +28,7 @@ const Layout = () => {
         <div className=' w-full relative right-[4rem] z-10 object-cover'>
           <NavBar />
         </div>
-        <div className='flex-grow'>
+        <div className='flex-grow relative -left-[5rem]'>
           <Outlet />
         </div>
       </div>
@@ -81,11 +85,23 @@ const router = createBrowserRouter([
   },
 ]);
 
+
+const Loading = () => (
+  <div className="flex flex-col gap-3 items-center justify-center w-full h-screen">
+    <div className="loader text-secondary text-6xl font-bold">Loading...</div>
+    <img src={load} alt="loading image" className=' w-[20rem] h-[20rem]' />
+  </div>
+);
+
 const App = () => {
   return (
-    <div className='w-full h-screen bg-primary text-secondary'>
-      <RouterProvider router={router} />
-    </div>
+    <MantineProvider>
+      <div className='w-full h-screen bg-primary text-secondary'>
+        <Suspense fallback={<Loading/>}>
+          <RouterProvider router={router} />
+        </Suspense>
+      </div>
+    </MantineProvider>
   );
 };
 
