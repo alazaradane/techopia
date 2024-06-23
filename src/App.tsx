@@ -81,12 +81,12 @@ const router = createBrowserRouter([
       {
         path:'/profile/edit',
         element: <EditProfile />,
-      },
-      {
-        path: 'login',
-        element: <Login />,
-      },
+      }
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ]);
 
