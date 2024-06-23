@@ -7,6 +7,7 @@ import blogger from './blogger.png'
 import view from './view.png'
 import plus from './plus.png'
 import pen from './pen.png'
+import search from './search.png'
 
 export {
     dashboard,
@@ -17,5 +18,6 @@ export {
     blogger,
     view,
     plus,
-    pen
+    pen,
+    search
 }

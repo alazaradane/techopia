@@ -21,7 +21,9 @@ const Layout = () => {
         <SideBar />
       </div>
       <div className='flex flex-col w-full'>
-        <NavBar />
+        <div className=' w-full relative right-[4rem] z-10 object-cover'>
+          <NavBar />
+        </div>
         <div className='flex-grow'>
           <Outlet />
         </div>
