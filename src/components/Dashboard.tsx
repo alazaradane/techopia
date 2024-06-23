@@ -5,7 +5,7 @@ import Chart from './Chart'
 
 const Dashboard = () => {
   return (
-    <main className= 'ml-2 w-full h-full flex flex-col'>
+    <main className= 'ml-2 w-full h-full flex flex-col bg-primary'>
       <div>
         <p className=' text-3xl font-bold text-secondary'>Dashboard</p>
       </div>

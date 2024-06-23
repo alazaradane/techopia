@@ -77,9 +77,7 @@
     }
   }
 
-  .bg-primary {
-    background-color: black;
-  }
+  
   
   .text-secondary {
     color: #fff;
@@ -97,16 +95,14 @@
     color: white;
   }
   
-  .ql-toolbar .ql-picker-options {
-    background-color: black; /* Ensure dropdown background is visible */
-  }
+  
   
   .ql-toolbar .ql-picker-item {
     color: white;
   }
   
-  /* Optional: Style the toolbar background and border */
+
   .ql-toolbar {
-    background-color: black;
     border: 1px solid white;
+    color: #fff;
   }

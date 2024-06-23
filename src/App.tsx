@@ -16,6 +16,7 @@ import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core'
 import { load } from './assets/images';
 import '@mantine/tiptap/styles.css';
+import { projects } from './data';
 
 
 const Layout = () => {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: '/projects/create',
         element: <ProjectForm/>
+      },
+      {
+        path:"/projects/edit/:id",
+        element: <ProjectForm initialData={projects[0]}/>
       },
       {
         path: '/blogs',
