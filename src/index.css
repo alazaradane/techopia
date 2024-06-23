@@ -76,3 +76,37 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .bg-primary {
+    background-color: black;
+  }
+  
+  .text-secondary {
+    color: #fff;
+  }
+  
+  .rte-content {
+    background-color: black;
+    color: white;
+  }
+  .ql-toolbar .ql-formats button svg {
+    fill: white;
+  }
+  
+  .ql-toolbar .ql-picker-label {
+    color: white;
+  }
+  
+  .ql-toolbar .ql-picker-options {
+    background-color: black; /* Ensure dropdown background is visible */
+  }
+  
+  .ql-toolbar .ql-picker-item {
+    color: white;
+  }
+  
+  /* Optional: Style the toolbar background and border */
+  .ql-toolbar {
+    background-color: black;
+    border: 1px solid white;
+  }

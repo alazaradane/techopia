@@ -1,5 +1,5 @@
 
-import { dashboard, drawing, event, pen, plus, profile, view, web } from "../assets/images";
+import { cursor, dashboard, drawing, event, learn, pen, plus, profile, sbrain, secure, view, web } from "../assets/images";
 
 
 
@@ -25,3 +25,20 @@ export const data = [
     { month: 'May', Smartphones: 800, Laptops: 1400, Tablets: 1200 },
     { month: 'June', Smartphones: 750, Laptops: 600, Tablets: 1000 },
 ];
+
+export const projects = [
+    {
+      title: 'Kintai kanry system',
+      description: 'We offer top-notch performance to our clients by providing systematic and innovative services to cater to their key products & services.',
+      technologies: ['React Native', 'Next.js', 'GraphQL', 'Figma'],
+      image: learn, 
+      icon:secure
+    },
+    {
+      title: 'Oyu tolgoi catalyst fund for development',
+      description: 'We offer top-notch services to our clients by providing systematic and innovative services to cater to their key products & services.',
+      technologies: ['ReactJS', 'GraphQL', 'Figma'],
+      image: sbrain, 
+      icon:cursor
+    },
+  ]

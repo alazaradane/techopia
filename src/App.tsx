@@ -10,12 +10,12 @@ import Profile from './components/Profile';
 import ProjectForm from './components/ProjectForm';
 import BlogForm from './components/BlogForm';
 import Login from './components/Login';
-import path from 'path';
 import EditProfile from './components/EditProfile';
 import EventForm from './components/EventForm';
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core'
 import { load } from './assets/images';
+import '@mantine/tiptap/styles.css';
 
 
 const Layout = () => {

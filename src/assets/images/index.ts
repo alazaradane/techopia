@@ -9,8 +9,18 @@ import plus from './plus.png'
 import pen from './pen.png'
 import search from './search.png'
 import load from './load.png'
+import secure from './secure.png'
+import cursor from './cursor.png'
+import learn from './learn.png'
+import sbrain from './sbrain.png'
+import notFound from './notfound.png'
 
 export {
+    notFound,
+    secure,
+    cursor,
+    learn,
+    sbrain,
     load,
     dashboard,
     event,
