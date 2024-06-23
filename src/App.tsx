@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import SideBar from './components/SideBar';
 import NavBar from './components/NavBar';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -13,11 +13,10 @@ import Login from './components/Login';
 import EditProfile from './components/EditProfile';
 import EventForm from './components/EventForm';
 import '@mantine/core/styles.css';
-import { MantineProvider } from '@mantine/core'
-import { load } from './assets/images';
+import { MantineProvider } from '@mantine/core';
+import { load, profile } from './assets/images';
 import '@mantine/tiptap/styles.css';
 import { projects } from './data';
-
 
 const Layout = () => {
   return (
@@ -37,7 +36,7 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
+const router = (admin, setAdmin) => createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
@@ -76,11 +75,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <Profile />,
+        element: <Profile profile={admin} />,
       },
       {
         path:'/profile/edit',
-        element: <EditProfile />,
+        element: <EditProfile profile={admin} setProfile={setAdmin} />,
       }
     ],
   },
@@ -90,7 +89,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 const Loading = () => (
   <div className="flex flex-col gap-3 items-center justify-center w-full h-screen">
     <div className="loader text-secondary text-6xl font-bold">Loading...</div>
@@ -99,11 +97,19 @@ const Loading = () => (
 );
 
 const App = () => {
+  const [admin, setAdmin] = useState({
+    fullName: 'Full Name',
+    username: 'example123',
+    email: 'example@gmail.com',
+    password: 'example123',
+    profilePic: profile, 
+  });
+
   return (
     <MantineProvider>
       <div className='w-full h-screen bg-primary text-secondary'>
         <Suspense fallback={<Loading/>}>
-          <RouterProvider router={router} />
+          <RouterProvider router={router(admin, setAdmin)} />
         </Suspense>
       </div>
     </MantineProvider>
