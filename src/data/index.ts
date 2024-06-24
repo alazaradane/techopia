@@ -8,7 +8,7 @@ export const sidebar = [
     {id:2,  icon: web, mlabel: "Projects", vicon:view, vlabel:"View Projects", vlink:'/projects', cicon:plus, clabel: "Create Project", clink:'/projects/create'},
     {id:3,  icon: drawing, mlabel: "Blogs",vicon:view , vlabel:"View Blogs", vlink:'/blogs',cicon:plus, clabel: "Create Blogs", clink:'/blogs/create'},
     {id:4, icon: event, mlabel: "Events", vicon:view,vlabel:"View Events", vlink:'/events',cicon:plus, clabel: "Create Events", clink:'/events/create'},
-    {id:5, icon: profile, mlabel: "Profile",vicon:view, vlabel:"View Profile", vlink:'/profile', cicon:pen,clabel: "Edit Profile", clink:'/profile/edit'}, 
+    {id:5, icon: profile, mlabel: "Profile",vicon:view, vlabel:"View Profile", vlink:'/profile', cicon:pen,clabel: "Edit Profile", clink:'/profile/edit',aicon:plus, alabel:"Create Admin", alink:"/profile/create"}, 
 ]
 
 export const dashvalue =[

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DashCard from './DashCard'
 import { dashvalue } from '../data'
 import Chart from './Chart'
 
+
+
 const Dashboard = () => {
   return (
+    <>
+  
     <main className= 'ml-2 w-full h-full flex flex-col bg-primary'>
       <div>
         <p className=' text-3xl font-bold text-secondary'>Dashboard</p>
@@ -21,6 +25,7 @@ const Dashboard = () => {
         <div></div>
       </div>
     </main>
+    </>
   )
 }
 

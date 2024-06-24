@@ -5,13 +5,11 @@ import { FaUser } from 'react-icons/fa';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useDropzone } from 'react-dropzone';
+import {profile} from '../assets/images/index'
 
-const EditProfile = ({ profile, setProfile }) => {
-  const [fullName, setFullName] = useState(profile.fullName);
-  const [username, setUsername] = useState(profile.username);
-  const [email, setEmail] = useState(profile.email);
-  const [password, setPassword] = useState(profile.password);
-  const [profilePic, setProfilePic] = useState(profile.profilePic);
+const EditProfile = () => {
+
+  const [profilePic, setProfilePic] = useState(profile);
   const navigate = useNavigate();
 
   const handleDrop = (acceptedFiles) => {
@@ -24,15 +22,11 @@ const EditProfile = ({ profile, setProfile }) => {
     maxFiles: 1
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setProfile({ fullName, username, email, password, profilePic });
-    navigate('/profile');
-  };
+  
 
   return (
     <main className='flex flex-col items-start w-full ml-5 mb-10'>
-      <form onSubmit={handleSubmit} className='flex flex-col w-full'>
+      <form  className='flex flex-col w-full'>
         <div className='flex flex-col flex-1'>
           <p className='text-4xl font-bold text-secondary'>
             Edit <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500'>Profile</span>
@@ -58,21 +52,21 @@ const EditProfile = ({ profile, setProfile }) => {
           <div className='flex items-center gap-16 mt-10'>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Full Name</p>
-              <Input value={fullName} onChange={(e) => setFullName(e.target.value)} className='w-60 text-secondary bg-primary border-[1px]' />
+              <Input value=""  className='w-60 text-secondary bg-primary border-[1px]' />
             </div>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Username</p>
-              <Input value={username} onChange={(e) => setUsername(e.target.value)} className='w-60 text-secondary bg-primary border-[1px]' />
+              <Input value="" className='w-60 text-secondary bg-primary border-[1px]' />
             </div>
           </div>
           <div className='flex items-center gap-16 mt-10 mb-10'>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Email</p>
-              <Input value={email} onChange={(e) => setEmail(e.target.value)} className='placeholder:font-bold w-60 text-secondary bg-primary border-[1px]' />
+              <Input value="" className='placeholder:font-bold w-60 text-secondary bg-primary border-[1px]' />
             </div>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Password</p>
-              <Input type='password' value={password} onChange={(e) => setPassword(e.target.value)} className='w-60 text-secondary bg-primary border-[1px]' />
+              <Input type='password' value="" className='w-60 text-secondary bg-primary border-[1px]' />
             </div>
           </div>
           <div className='flex justify-between items-center'>
@@ -84,4 +78,4 @@ const EditProfile = ({ profile, setProfile }) => {
   );
 }
 
-export default EditProfile;
+export default EditProfile

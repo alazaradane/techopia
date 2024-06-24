@@ -39,6 +39,14 @@ const SideBar = () => {
                                     <img src={item.cicon} alt="icon" className=' w-[2rem] h-[2rem]  p-1' />
                                     <Link to={`${item.clink}`}> <p className=' text-md text-secondary font-semibold'>{item.clabel}</p></Link>
                                 </div>
+                                {
+                                    item.id===5 && (
+                                        <div className=' flex items-center gap-1'>
+                                            <img src={item.aicon} alt="icon" className=' w-[2rem] h-[2rem]  p-1' />
+                                            <Link to={`${item.alink}`}> <p className=' text-md text-secondary font-semibold'>{item.alabel}</p></Link>
+                                        </div>
+                                    )
+                                }
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

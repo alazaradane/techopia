@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useContext, useState } from 'react';
 import SideBar from './components/SideBar';
 import NavBar from './components/NavBar';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -17,6 +17,8 @@ import { MantineProvider } from '@mantine/core';
 import { load, profile } from './assets/images';
 import '@mantine/tiptap/styles.css';
 import { projects } from './data';
+import CreateProfile from './components/CreateProfile';
+import { AuthContext } from './Context/AuthContext';
 
 const Layout = () => {
   return (
@@ -79,7 +81,11 @@ const router = (admin, setAdmin) => createBrowserRouter([
       },
       {
         path:'/profile/edit',
-        element: <EditProfile profile={admin} setProfile={setAdmin} />,
+        element: <EditProfile  />,
+      },
+      {
+        path:'/profile/create',
+        element: <CreateProfile/>
       }
     ],
   },
