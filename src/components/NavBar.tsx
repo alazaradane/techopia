@@ -70,7 +70,7 @@ const NavBar = () => {
         <DropdownMenuLabel className=' mt-[1rem] mb-[0.25rem] font-semibold cursor-pointer'><Link to={'/profile/edit'}>Edit Profile</Link></DropdownMenuLabel>
         <DropdownMenuSeparator className=' text-secondary]' />
         <DropdownMenuRadioGroup className=' mb-[1rem] text-red-400 font-semibold cursor-pointer' value={position} onValueChange={setPosition}>
-           logout
+           <Link to={'/login'}>logout</Link>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
       </DropdownMenu>

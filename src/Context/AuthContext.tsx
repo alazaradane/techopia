@@ -1,8 +1,6 @@
-import React from 'react';
-import { createContext, useEffect, useState, ReactNode, FC } from 'react';
+import React, { createContext, useEffect, useState, ReactNode, FC } from 'react';
 import axios from 'axios';
 import backendUrl from '../../api/index';
-import { useNavigate } from 'react-router-dom';
 
 interface User {
   id: number;
@@ -13,18 +11,21 @@ interface User {
   role: string;
   image: any;
   join_date: string;
+  profilePic: string;  // Add profilePic here
 }
 
 interface AuthContextType {
   currentUser: User | null;
-  login: (input: any) => void;
+  login: (input: any, callback: () => void) => void;
   logout: () => void;
+  setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
 }
 
 export const AuthContext = createContext<AuthContextType>({
   currentUser: null,
   login: () => {},
   logout: () => {},
+  setCurrentUser: () => {}
 });
 
 export const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -32,14 +33,13 @@ export const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) =
     JSON.parse(localStorage.getItem('user') || 'null')
   );
 
-  const login = async (input: any) => {
-    const navigate = useNavigate()
+  const login = async (input: any, callback: () => void) => {
     try {
       const res = await axios.post<User>(`${backendUrl}/auth/login`, input, {
         withCredentials: true,
       });
       setCurrentUser(res.data);
-      navigate('/')
+      callback();  // Perform navigation
     } catch (error) {
       console.error('Login error:', error);
     }
@@ -59,7 +59,7 @@ export const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) =
   }, [currentUser]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login, logout }}>
+    <AuthContext.Provider value={{ currentUser, login, logout, setCurrentUser }}>
       {children}
     </AuthContext.Provider>
   );
