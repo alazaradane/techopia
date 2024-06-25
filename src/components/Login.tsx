@@ -48,7 +48,7 @@ const Login = () => {
             </div>
             <div className=' flex flex-col mb-2 gap-2'>
               <p className='font-bold text-lg'>Password</p>
-              <Input placeholder='Password' className='w-[20rem] text-primary' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+              <Input type='password' placeholder='Password' className='w-[20rem] text-primary' value={password} onChange={(e)=>setPassword(e.target.value)}/>
             </div>
             <div className='w-full mt-2'>
              <Button className=' w-full bg-gradient-to-r text-lg text-center font-bold from-purple-500 to-indigo-500 text-white'>Login</Button>

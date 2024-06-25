@@ -7,7 +7,11 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useDropzone } from 'react-dropzone';
 import backendUrl from '../../api/index';
-import {profile} from '../assets/images/index'
+import { profile } from '../assets/images/index';
+import Success from './Success'; // Adjust the import path
+import { Notification } from '@mantine/core';
+import { IconX } from '@tabler/icons-react';
+import Fail from './Fail';
 
 const CreateProfile = () => {
   const [input, setInput] = useState({
@@ -21,6 +25,8 @@ const CreateProfile = () => {
 
   const [profilePic, setProfilePic] = useState(profile);
   const [profilePicPreview, setProfilePicPreview] = useState(profile);
+  const [notification, setNotification] = useState({ show: false, type: '', message: '' });
+
   const navigate = useNavigate();
 
   const handleDrop = (acceptedFiles) => {
@@ -50,7 +56,6 @@ const CreateProfile = () => {
       formData.append('profilePic', profilePic);
     }
 
-  
     try {
       const res = await axios.post(`${backendUrl}/auth/register`, formData, {
         headers: {
@@ -58,9 +63,13 @@ const CreateProfile = () => {
         }
       });
       console.log(res.data);
-      navigate('/login');
+      setNotification({ show: true, type: 'success', message: 'Profile created successfully!' });
+      setTimeout(() => {
+        navigate('/');
+      }, 3000); // 3 seconds delay
     } catch (error) {
       console.error(error);
+      setNotification({ show: true, type: 'error', message: 'Failed to create profile.' });
     }
   };
 
@@ -100,11 +109,11 @@ const CreateProfile = () => {
           <div className='flex items-center gap-16 mt-10'>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Full Name</p>
-              <Input name='fullname' value={input.fullname} onChange={handleChange} className='w-60 text-secondary bg-primary border-[1px]' />
+              <Input required name='fullname' value={input.fullname} onChange={handleChange} className='w-60 text-secondary bg-primary border-[1px]' />
             </div>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Username</p>
-              <Input name='username' value={input.username} onChange={handleChange} className='w-60 text-secondary bg-primary border-[1px]' />
+              <Input required name='username' value={input.username} onChange={handleChange} className='w-60 text-secondary bg-primary border-[1px]' />
             </div>
           </div>
           <div className='flex items-center gap-16 mt-10 mb-10'>
@@ -114,7 +123,7 @@ const CreateProfile = () => {
             </div>
             <div className='flex flex-col gap-2'>
               <p className='text-secondary text-lg font-bold'>Password</p>
-              <Input type='password' name='password' value={input.password} onChange={handleChange} className='w-60 text-secondary bg-primary border-[1px]' />
+              <Input required type='password' name='password' value={input.password} onChange={handleChange} className='w-60 text-secondary bg-primary border-[1px]' />
             </div>
           </div>
           <div className='flex justify-between items-center'>
@@ -122,6 +131,12 @@ const CreateProfile = () => {
           </div>
         </div>
       </form>
+      {notification.show && notification.type === 'success' && (
+        <Success text={notification.message} />
+      )}
+      {notification.show && notification.type === 'error' && (
+        <Fail text={notification.message}/>
+      )}
     </main>
   );
 };
