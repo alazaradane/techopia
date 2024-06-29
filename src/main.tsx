@@ -1,13 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { AuthContextProvider } from './Context/AuthContext.tsx'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './App';
+import { AuthContextProvider } from './Context/AuthContext';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+ReactDOM.render(
+  <Router>
     <AuthContextProvider>
       <App />
     </AuthContextProvider>
-  </React.StrictMode>,
-)
+  </Router>,
+  document.getElementById('root')
+);

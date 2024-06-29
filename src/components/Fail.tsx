@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { IconX, IconCheck } from '@tabler/icons-react';
 import { Notification, rem } from '@mantine/core';
 import React from 'react';

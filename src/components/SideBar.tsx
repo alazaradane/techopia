@@ -1,6 +1,6 @@
 import React from 'react'
 import {Logo} from '../assets/icons/index'
-import {dashboard, plus, web} from '../assets/images/index'
+// import {dashboard, plus, web} from '../assets/images/index'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@radix-ui/react-accordion'
 import {sidebar} from '../data/index'
 import { Link } from 'react-router-dom'
@@ -22,7 +22,7 @@ const SideBar = () => {
                             <AccordionTrigger className='  w-[18rem] px-2 py-1 flex gap-2 items-center'>
                                 <img src={item.icon} alt="icon" className=' w-[2rem] h-[2rem]  p-1' />
                                 <p className=' text-md text-secondary font-semibold'>
-                                {item.id === 1 ? (
+                                {item.id === 1 || item.id===6 ? (
                                 <Link to={`${item.mlink}`} className='text-md text-secondary font-semibold'>{item.mlabel}</Link>
                                   ) : (
                                 <p className='text-md text-secondary font-semibold'>{item.mlabel}</p>

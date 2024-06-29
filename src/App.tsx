@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Suspense, useContext, useState } from 'react';
 import SideBar from './components/SideBar';
 import NavBar from './components/NavBar';
@@ -20,6 +21,7 @@ import '@mantine/tiptap/styles.css';
 import { projects } from './data';
 import { AuthContext } from './Context/AuthContext';
 import ProtectedRoute from './components/utils/ProtectedRoute';
+import Admins from './components/Admins';
 
 const Layout = () => (
   <div className='flex w-full h-fit gap-[4rem] bg-primary'>
@@ -58,7 +60,6 @@ const App = () => {
     <MantineProvider>
       <div className='w-full h-screen bg-primary text-secondary'>
         <Suspense fallback={<Loading />}>
-          <Router>
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route element={<ProtectedRoute />}>
@@ -74,11 +75,11 @@ const App = () => {
                   <Route path="profile" element={<Profile  />} />
                   <Route path="profile/edit" element={<EditProfile />} />
                   <Route path="profile/create" element={<CreateProfile />} />
+                  <Route path='admins' element={<Admins/>}/>
                 </Route>
               </Route>
               <Route path="*" element={<Navigate to={currentUser ? "/" : "/login"} />} />
             </Routes>
-          </Router>
         </Suspense>
       </div>
     </MantineProvider>
