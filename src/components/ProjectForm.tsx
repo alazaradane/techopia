@@ -1,53 +1,84 @@
-import React, { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
-import { useNavigate } from 'react-router-dom';
-import { useDropzone, Accept } from 'react-dropzone';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useDropzone } from 'react-dropzone';
+import axios from 'axios';
 import { drop } from '../assets/icons';
+import backend_url from '../../api';
+import { image_url } from '../../api/image'
 
 interface InitialData {
   id?: number;
   title?: string;
-  description?: string;
-  technologies?: string[];
+  detail?: string;
+  technology?: string;
   image?: any;
   icon?: any;
 }
 
-interface ProjectFormProps {
-  initialData?: InitialData;
-}
-
-const ProjectForm: React.FC<ProjectFormProps> = ({ initialData = {} }) => {
-  const { title = '', description = '', icon = '', image = '', technologies = [], id } = initialData;
+const ProjectForm: React.FC = () => {
+  const location = useLocation();
+  const initialData = (location.state as any)?.project || {};
+  const { title = '', detail = '', icon = '', image = '', technology = '', id } = initialData;
 
   const [projectTitle, setTitle] = useState(title);
-  const [projectDescription, setDescription] = useState(description);
-  const [projectIcon, setIcon] = useState(icon);
-  const [projectImage, setImage] = useState(image);
-  const [projectTechnologies, setTechnologies] = useState(technologies);
+  const [projectDetail, setDetail] = useState(detail);
+  const [projectIcon, setIcon] = useState<any>(icon);
+  const [projectImage, setImage] = useState<any>(image);
+  const [projectTechnologies, setTechnologies] = useState<string[]>(technology.split(','));
   const [techInput, setTechInput] = useState('');
   const navigate = useNavigate();
 
-  const handleDrop = (acceptedFiles: File[]) => {
+  const handleDropIcon = (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
-    setIcon(URL.createObjectURL(file));
+    setIcon(file);
   };
 
-  const { getRootProps, getInputProps } = useDropzone({ 
-    onDrop: handleDrop, 
-    maxFiles: 1
+  const handleDropImage = (acceptedFiles: File[]) => {
+    const file = acceptedFiles[0];
+    setImage(file);
+  };
+
+  const { getRootProps: getRootPropsIcon, getInputProps: getInputPropsIcon } = useDropzone({ 
+    onDrop: handleDropIcon, 
+    maxFiles: 1 
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const { getRootProps: getRootPropsImage, getInputProps: getInputPropsImage } = useDropzone({ 
+    onDrop: handleDropImage, 
+    maxFiles: 1 
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({
-      title: projectTitle,
-      description: projectDescription,
-      icon: projectIcon,
-      image: projectImage,
-      technologies: projectTechnologies,
-    });
-    navigate('/projects');
+    
+    const formData = new FormData();
+    formData.append('title', projectTitle);
+    formData.append('detail', projectDetail);
+    formData.append('technology', projectTechnologies.join(','));
+    if (projectIcon instanceof File) formData.append('icon', projectIcon);
+    if (projectImage instanceof File) formData.append('image', projectImage);
+
+    try {
+      if (id) {
+        await axios.put(`${backend_url}/project/${id}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      } else {
+        await axios.post(`${backend_url}/project`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      }
+      navigate('/projects');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   const handleAddTechnology = () => {
@@ -80,9 +111,9 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData = {} }) => {
             type="text"
             value={projectTitle}
             onChange={(e) => setTitle(e.target.value)}
-            className=" px-[1.5rem] py-[0.5rem] focus:outline-none block w-full rounded-md bg-gray-800 border-gray-700 text-white"
+            className="px-[1.5rem] py-[0.5rem] focus:outline-none block w-full rounded-md bg-gray-800 border-gray-700 text-white"
             required
-            placeholder='Project Title'
+            placeholder="Project Title"
           />
         </div>
         <div className="mb-4">
@@ -90,36 +121,44 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData = {} }) => {
             Project Description
           </label>
           <ReactQuill 
-            id='description'
+            id="description"
             theme="snow" 
-            value={projectDescription} 
-            onChange={setDescription} 
+            value={projectDetail} 
+            onChange={setDetail} 
           />
         </div>
         <div className="mb-4">
           <label htmlFor="icon" className="block text-lg font-medium text-secondary mb-[1rem]">
             Project Icon 
           </label>
-          <div {...getRootProps()} className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white p-4 text-center cursor-pointer">
-            <input {...getInputProps()} />
-            <div className=' flex flex-col items-center justify-center gap-2'>
-              <img src={drop} alt="drag and drop" className=' w-[4rem] h-[4rem]' />
-              <p className=' font-lg'>Drag and drop an icon here, or click to select a file</p>
+          <div {...getRootPropsIcon()} className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white p-4 text-center cursor-pointer">
+            <input {...getInputPropsIcon()} />
+            <div className="flex flex-col items-center justify-center gap-2">
+              <img src={drop} alt="drag and drop" className="w-[4rem] h-[4rem]" />
+              <p className="font-lg">Drag and drop an icon here, or click to select a file</p>
             </div>
-            {projectIcon && <img src={projectIcon} alt="Project Icon" className="mt-2" style={{ maxHeight: '200px' }} />}
+            {projectIcon && (projectIcon instanceof File ? (
+              <img src={URL.createObjectURL(projectIcon)} alt="Project Icon" className="mt-2" style={{ maxHeight: '200px' }} />
+            ) : (
+              <img src={`${image_url}/${projectIcon}`} alt="Project Icon" className="mt-2" style={{ maxHeight: '200px' }} />
+            ))}
           </div>
         </div>
         <div className="mb-4">
           <label htmlFor="image" className="block text-lg font-medium text-secondary mb-[1rem]">
             Project Image
           </label>
-          <div {...getRootProps()} className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white p-4 text-center cursor-pointer">
-            <input {...getInputProps()} />
-            <div className=' flex flex-col items-center justify-center gap-2'>
-              <img src={drop} alt="drag and drop" className=' w-[4rem] h-[4rem]' />
-              <p className=' font-lg'>Drag and drop an image here, or click to select a file</p>
+          <div {...getRootPropsImage()} className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white p-4 text-center cursor-pointer">
+            <input {...getInputPropsImage()} />
+            <div className="flex flex-col items-center justify-center gap-2">
+              <img src={drop} alt="drag and drop" className="w-[4rem] h-[4rem]" />
+              <p className="font-lg">Drag and drop an image here, or click to select a file</p>
             </div>
-            {projectIcon && <img src={projectImage} alt="Project Icon" className="mt-2" style={{ maxHeight: '200px' }} />}
+            {projectImage && (projectImage instanceof File ? (
+              <img src={URL.createObjectURL(projectImage)} alt="Project Image" className="mt-2" style={{ maxHeight: '200px' }} />
+            ) : (
+              <img src={`${image_url}/${projectImage}`} alt="Project Image" className="mt-2" style={{ maxHeight: '200px' }} />
+            ))}
           </div>
         </div>
         <div className="mb-4">
@@ -162,5 +201,3 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData = {} }) => {
 };
 
 export default ProjectForm;
-
-
