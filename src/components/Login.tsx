@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Logo, login } from '../assets/icons'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import backend_url from '../../api'
 

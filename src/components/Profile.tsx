@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { HiMiniPhoto } from "react-icons/hi2";
 import { Button } from './ui/button';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import { Input } from './ui/input';
 import { AuthContext } from '../Context/AuthContext';

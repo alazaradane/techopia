@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { image_url } from '../../api/image';
 import { useLocation, Link } from 'react-router-dom'
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from './ui/breadcrumb'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from './ui/breadcrumb'
 import { Input } from './ui/input';
 import { DropdownMenuContent } from './ui/dropdown-menu';
 import { DropdownMenu, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuSeparator, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { search } from '../assets/images';
+import { AuthContext } from '../Context/AuthContext';
 
 
 const capitalizeFirstLetter = (string: string) => {
@@ -21,7 +23,7 @@ const RouterBreadcrumbLink = ({ to, children }: { to: string, children: React.Re
 const NavBar = () => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter(x => x);
-
+  const {currentUser} = useContext(AuthContext)
   const [position, setPosition] = React.useState("bottom") 
   return (
     <main className=' p-2 flex items-center justify-between  w-full relative -left-[2rem]'>
@@ -61,7 +63,7 @@ const NavBar = () => {
         <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Avatar className=' cursor-pointer'>
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarImage src={`${image_url}/${currentUser.profilePic}`} alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       </DropdownMenuTrigger>
