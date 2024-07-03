@@ -72,6 +72,7 @@ const App = () => {
                   <Route path="blogs/create" element={<BlogForm />} />
                   <Route path="events" element={<Events />} />
                   <Route path="events/create" element={<EventForm />} />
+                  <Route path="events/edit/:id" element={<EventForm />} />
                   <Route path="profile" element={<Profile  />} />
                   <Route path="profile/edit" element={<EditProfile />} />
                   <Route path="profile/create" element={<CreateProfile />} />

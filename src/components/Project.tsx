@@ -99,7 +99,7 @@ const Projects: React.FC = () => {
       </div>
       <div className="space-y-8 max-w-5xl w-full flex flex-col items-center justify-center mx-auto">
         {filteredProjects.length === 0 ? (
-          <ProjectNotFound text={`Opps... 😔 Project not found, Create Project`} />
+          <ProjectNotFound text={`Opps... 😔 Project not found, Create Project`} name={'Project'} route={'/projects/create'} />
         ) : (
           filteredProjects.map((work, index) => (
             <div key={index} className="bg-gray-900 text-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row relative">
