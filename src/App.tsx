@@ -22,6 +22,7 @@ import { projects } from './data';
 import { AuthContext } from './Context/AuthContext';
 import ProtectedRoute from './components/utils/ProtectedRoute';
 import Admins from './components/Admins';
+import BlogDetail from './components/Blogdetail';
 
 const Layout = () => (
   <div className='flex w-full h-fit gap-[4rem] bg-primary'>
@@ -70,6 +71,7 @@ const App = () => {
                   <Route path="projects/edit/:id" element={<ProjectForm initialData={projects[0]} />} />
                   <Route path="blogs" element={<Blog />} />
                   <Route path="blogs/create" element={<BlogForm />} />
+                  <Route path='blogs/:id' element={<BlogDetail/>}/>
                   <Route path="events" element={<Events />} />
                   <Route path="events/create" element={<EventForm />} />
                   <Route path="events/edit/:id" element={<EventForm />} />

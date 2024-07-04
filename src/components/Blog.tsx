@@ -46,7 +46,7 @@ const Blogs = () => {
         <p className="text-6xl font-bold">
           Techopia <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">Blog</span>
         </p>
-        <div className="w-[40rem] bg-primary flex items-center mx-[2rem] px-[2rem] py-[0.5rem] rounded-2xl">
+        <div className="w-[40rem] bg-primary flex items-center mx-[2rem] px-[2rem] py-[0.5rem] rounded-lg border-[1px] border-slate-300">
           <img src={search} alt="search icon" className="w-[2rem] h-[2rem]" />
           <Input
             placeholder="Search Blogs"
@@ -68,7 +68,7 @@ const Blogs = () => {
           </Badge>
         ))}
       </div>
-      <div className="flex mt-[2rem] pb-[4rem] px-[0.5rem] gap-[1rem] items-center flex-wrap">
+      <div className="flex mt-[0.5rem] pb-[4rem] px-[0.5rem] gap-[1rem] items-center flex-wrap">
         {filteredBlogs.length===0 ? (
           <ProjectNotFound text={`Opps... 😔 Blog not found, but let collaborate and post new blogs  👍`}/>
         ):filteredBlogs.map((blog) => (
