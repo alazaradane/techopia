@@ -71,6 +71,7 @@ const App = () => {
                   <Route path="projects/edit/:id" element={<ProjectForm initialData={projects[0]} />} />
                   <Route path="blogs" element={<Blog />} />
                   <Route path="blogs/create" element={<BlogForm />} />
+                  <Route path="blogs/edit/:id" element={<BlogForm />} />
                   <Route path='blogs/:id' element={<BlogDetail/>}/>
                   <Route path="events" element={<Events />} />
                   <Route path="events/create" element={<EventForm />} />
