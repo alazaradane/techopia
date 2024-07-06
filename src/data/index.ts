@@ -95,7 +95,7 @@ export const contactUs = [
 
 
 export interface Blog {
-  id:Number,
+  id:number,
   title: string;
   category: string,
   date: string,
