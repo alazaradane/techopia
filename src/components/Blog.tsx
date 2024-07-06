@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { search } from "../assets/images";
 import { Badge } from "../components/ui/badge";
@@ -31,24 +31,24 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
   const [dropdownOpen, setDropdownOpen] = useState<{ [key: number]: boolean }>({});
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRefs = useRef<HTMLDivElement[]>([]);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get(`${backend_url}/blog`);
+      const blogs = response.data;
+
+      // Log the API response data for verification
+      console.log('API response data:', blogs);
+
+      setBlogs(blogs);
+      setFilteredBlogs(blogs);
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await axios.get(`${backend_url}/blog`);
-        const blogs = response.data;
-
-        // Log the API response data for verification
-        console.log('API response data:', blogs);
-
-        setBlogs(blogs);
-        setFilteredBlogs(blogs);
-      } catch (error) {
-        console.error('Error fetching blogs:', error);
-      }
-    };
-
     fetchBlogs();
   }, []);
 
@@ -80,7 +80,7 @@ const Blogs = () => {
   const handleDelete = async (blogId: number) => {
     try {
       await axios.delete(`${backend_url}/blog/${blogId}`);
-      setBlogs(blogs.filter(blog => blog.id !== blogId));
+      fetchBlogs(); // Refetch the blogs after deletion
     } catch (error) {
       console.error('Error deleting blog:', error);
     }
@@ -93,18 +93,31 @@ const Blogs = () => {
     }));
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-      setDropdownOpen({});
-    }
-  };
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    dropdownRefs.current.forEach((ref, index) => {
+      if (ref && !ref.contains(event.target as Node)) {
+        setDropdownOpen(prevState => ({
+          ...prevState,
+          [index]: false,
+        }));
+      }
+    });
+  }, []);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
+
+  const truncateText = (text: string, wordLimit: number): string => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) {
+      return text;
+    }
+    return words.slice(0, wordLimit).join(' ') + '...';
+  };
 
   return (
     <main className="text-secondary w-full h-fit bg-primary">
@@ -150,12 +163,12 @@ const Blogs = () => {
                 <Link to={`/blogs/${blog.id}`}>
                   <h2 className="text-white text-xl font-bold cursor-pointer">{blog.title}</h2>
                 </Link>
-                <p className="mt-2 text-gray-400" dangerouslySetInnerHTML={{ __html: blog.detail }}></p>
+                <p className="mt-2 text-gray-400" dangerouslySetInnerHTML={{ __html: truncateText(blog.detail, 20) }}></p>
                 <div className="flex items-center justify-between my-[0.75rem]">
                   <p className="bg-gray-700 text-white text-sm px-3 py-1 rounded-full">{blog.category}</p>
                   <p className="text-sm font-semibold">{blog.date}</p>
                 </div>
-                <div className="absolute top-4 right-4" ref={dropdownRef}>
+                <div className="absolute top-4 right-4" ref={(el) => (dropdownRefs.current[index] = el)}>
                   <button onClick={() => toggleDropdown(index)} className="text-white">
                     <FaEllipsisV />
                   </button>
